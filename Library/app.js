@@ -16,14 +16,19 @@ function authSearch () {
 	}
 }
 
-function addbook (book){
+function addBook (){
+    let book = {author: document.getElementById('bookAuthor').value, title: document.getElementById('bookTitle').value}
 	books.push(book);
 
 }
 
 function showAllBooks () {
+    
+    document.getElementById('allTheBooks').innerHTML = " ";
+for (var i=0; i < books.length; i++)  {  
 	let listItem = document.createElement('li')
 	let textnode = document.createTextNode('a book')
-	listItem.appendchild(textnode)
-	document.getElementById('allTheBooks').appendchild(listItem)
+	listItem.appendChild(textnode)
+	document.getElementById('allTheBooks').appendChild(listItem)
 }
+    }
