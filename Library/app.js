@@ -6,14 +6,26 @@ let books = [
 ]
 
 function authSearch () {
-	let aName = document.getElementById('authorSearch').value
-	let name = books.filter((x) => x.author === aName)
-	try {
-		document.getElementById('result').innerHTML = 'yes we have at least one book by ' + name[0].author
-	}
-	catch (err) {
-		document.getElementById('result').innerHTML = 'Sorry no books by ' + aName
-	}
+    document.getElementById('result').innerHTML = ''
+    let aName = document.getElementById('authorSearch').value
+    let regExpression = new RegExp(aName.toUpperCase())
+    let resultCount = 0
+    books.forEach((x) => {
+        if (regExpression.test(x.author.toUpperCase())){
+            let listItem = document.createElement('li')
+            let textNote = document.createTextNode(x.title)
+            listItem.appendChild(textNode)
+            document.getElementById('result').appendChild(listItem)
+            resultCount = resultCount + 1
+        }
+    })
+    if (resultCount === 0) {
+        document.getElementById('result').innerHTML = 'Sorry no books by ' + aName
+    }
+    
+//    catch (err) {
+//		document.getElementById('result').innerHTML = 'Sorry no books by ' + aName
+//	}
 }
 
 function addBook (){
