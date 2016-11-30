@@ -6,29 +6,41 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="section">
   <main>
     <h1>the library</h1>
-    <p>search for author by name</p>
+
+    <p>Select User</p>
+    <select id="user">
+      <option value="0">owner</option>
+      <option value="1">user1</option>
+      <option value="2">user2</option>
+    </select>
+
+    <p>Eearch for Author by Name</p>
+    <select id="optionSearch">
+      <option value="a">Author</option>
+      <option value="t">Title</option>
+      <option value="g">Genre</option>
+    </select>
     <input id="authorSearch" >
     <button type="button" onclick="authSearch()">search</button>
     <p id='result'></p>
+      <p id="message"></p>
 
-    <h2>add a book to the library</h2>
-    <p>Book Title</p>  
-    <input id="bookTitle" type="text"><br>
-    <p>Book Author</p>  
-    <input id="bookAuthor" type="text">  
-    <button type="button" onclick="addBook()">add</button>
+      <ul id="borrow">
+      </ul>
 
-    <h2>books currently in the library</h2>
-    <button type="button" onclick="showAllBooks()">show books</button>
-    <ol id="allTheBooks">
-
-    </ol>
+ 
   </main>
+
+  <div class="image">
+<img src="images/flowerbook.png">
+  </div>
   <footer>
     <p>wmdd 4820 2016</p>
   </footer>
+</div>
   <script src="app.js"></script>
 </body>
 </html>
